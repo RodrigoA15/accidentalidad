@@ -1,9 +1,10 @@
-import MapViewer from "./components/MapViewer";
+import { Map2024 } from "./components/Map2024";
+// import MapViewer from "./components/MapViewer";
 
 function App() {
   return (
     <div>
-      <MapViewer />
+      <Map2024 />
     </div>
   );
 }
