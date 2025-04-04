@@ -1,6 +1,8 @@
-import { MapContainer, Marker, Polyline, TileLayer, Tooltip,  } from "react-leaflet"
+import { MapContainer, Marker, Polyline, TileLayer, Tooltip, } from "react-leaflet"
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 export const Map2024 = () => {
 
@@ -338,6 +340,13 @@ export const Map2024 = () => {
         html: `<span style="${markerHtmlStyles}" />`
     })
 
+    delete L.Icon.Default.prototype._getIconUrl;
+
+    L.Icon.Default.mergeOptions({
+        iconUrl: markerIcon,
+        shadowUrl: markerShadow,
+    });
+
     return (
         <>
             <MapContainer
@@ -357,7 +366,7 @@ export const Map2024 = () => {
                 ))}
 
                 {dataMarkersDead.map((pos, index) => (
-                    <Marker key={index} position={pos} icon={icon}/>
+                    <Marker key={index} position={pos} icon={icon} />
                 ))}
 
                 <Polyline positions={zone1} pathOptions={blackOptions}>
