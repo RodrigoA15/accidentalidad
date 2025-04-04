@@ -342,9 +342,13 @@ export const Map2024 = () => {
 
     delete L.Icon.Default.prototype._getIconUrl;
 
-    L.Icon.Default.mergeOptions({
+    const customIcon = new L.Icon({
         iconUrl: markerIcon,
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
         shadowUrl: markerShadow,
+        shadowSize: [41, 41],
     });
 
     return (
@@ -362,7 +366,7 @@ export const Map2024 = () => {
                 />
 
                 {dataPopups.map((pos, index) => (
-                    <Marker key={index} position={pos} />
+                    <Marker key={index} position={pos} icon={customIcon} />
                 ))}
 
                 {dataMarkersDead.map((pos, index) => (
