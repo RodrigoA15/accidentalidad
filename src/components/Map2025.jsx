@@ -1,4 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Circle, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -59,11 +59,24 @@ export const Map2025 = () => {
                             ? item.COORDENADAS
                             : item.COORDENADAS.split(',').map(coord => parseFloat(coord.trim()));
                         return (
-                            <Marker key={item.NRO_CROQUIS} position={coordinates} icon={item.GRAVEDAD === 'm' ? icon : customIcon}>
-                                <Popup>
-                                    {item.NRO_CROQUIS}
-                                </Popup>
-                            </Marker>
+                            <>
+                                <Marker position={coordinates} icon={item.GRAVEDAD === 'm' ? icon : customIcon}>
+                                    <Popup>
+                                        {item.NRO_CROQUIS}
+                                    </Popup>
+                                </Marker>
+                                <Circle
+                                    center={[2.481354279212953, -76.57449602792349]}
+                                    radius={200}
+                                    stroke={false}
+                                />
+
+                                <Circle
+                                    center={[2.4671311615885037, -76.58644548164973]}
+                                    radius={150}
+                                    stroke={false}
+                                />
+                            </>
                         );
                     })
                 }
