@@ -1,4 +1,4 @@
-import { Circle, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { Circle, MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -72,7 +72,11 @@ export const Map2025 = () => {
                                         color: 'red',
                                         fillOpacity: 0,
                                     }}
-                                />
+                                >
+                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                        Bella vista
+                                    </Tooltip>
+                                </Circle>
 
                                 <Circle
                                     center={[2.4671311615885037, -76.58644548164973]}
@@ -81,7 +85,11 @@ export const Map2025 = () => {
                                         color: 'red',
                                         fillOpacity: 0,
                                     }}
-                                />
+                                >
+                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                        Torre molinos
+                                    </Tooltip>
+                                </Circle>
 
                                 <Circle
                                     center={[2.4517078231692366, -76.60492614837501]}
@@ -90,7 +98,11 @@ export const Map2025 = () => {
                                         color: 'red',
                                         fillOpacity: 0,
                                     }}
-                                />
+                                >
+                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                        Toscana
+                                    </Tooltip>
+                                </Circle>
 
                                 <Circle
                                     center={[2.4448049143238646, -76.61486831477171]}
@@ -99,8 +111,11 @@ export const Map2025 = () => {
                                         color: 'red',
                                         fillOpacity: 0,
                                     }}
-                                />
-
+                                >
+                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                        Carrera 17 la esmeralda
+                                    </Tooltip>
+                                </Circle>
                                 <Circle
                                     center={[2.44796556629502, -76.62162695164538]}
                                     radius={150}
@@ -108,7 +123,11 @@ export const Map2025 = () => {
                                         color: 'red',
                                         fillOpacity: 0,
                                     }}
-                                />
+                                >
+                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                        Calle 5 cementerio central
+                                    </Tooltip>
+                                </Circle>
                             </>
                         );
                     })
