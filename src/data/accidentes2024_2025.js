@@ -98,6 +98,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "765800",
     FECHA_ACCIDENTE: "1/26/2024 4:17 AM",
     COORDENADAS: "2.4664136949136433, -76.58709967753812",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3156",
@@ -318,6 +319,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "763709",
     FECHA_ACCIDENTE: "3/18/2024 7:00 PM",
     COORDENADAS: "2.481310359485272, -76.57294637380343",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3193",
@@ -378,6 +380,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "766103",
     FECHA_ACCIDENTE: "3/29/2024 6:12 AM",
     COORDENADAS: "2.4517078231692366, -76.60492614837501",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3184",
@@ -468,6 +471,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "763422",
     FECHA_ACCIDENTE: "5/23/2024 8:30 PM",
     COORDENADAS: "2.4813591294645576, -76.5745648450915",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3218",
@@ -948,6 +952,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "763419",
     FECHA_ACCIDENTE: "8/29/2024 8:55 AM",
     COORDENADAS: "2.481308139059479, -76.57290554733646",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3264",
@@ -2031,6 +2036,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "763431",
     FECHA_ACCIDENTE: "6/2/2023 9:40 PM",
     COORDENADAS: "2.4796915797938066, -76.57546895353141",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3028",
@@ -2061,6 +2067,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "763634",
     FECHA_ACCIDENTE: "7/3/2023 6:45 AM",
     COORDENADAS: "2.4677791689862882, -76.58569338415018",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3036",
@@ -2111,6 +2118,7 @@ export const accidentes24_25 = [
     COORDENADA_Y: "763678",
     FECHA_ACCIDENTE: "7/13/2023 7:30 AM",
     COORDENADAS: "2.4429052165185365, -76.61524536501658",
+    RUNT: "S",
   },
   {
     NRO_RADICADO: "3065",

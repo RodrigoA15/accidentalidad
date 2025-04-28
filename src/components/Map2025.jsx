@@ -62,7 +62,7 @@ export const Map2025 = () => {
                             <>
                                 <Marker position={coordinates} icon={item.GRAVEDAD === 'm' ? icon : customIcon}>
                                     <Popup>
-                                        {item.NRO_CROQUIS}
+                                        {item.NRO_CROQUIS} - CARGADO: {item.RUNT}
                                     </Popup>
                                 </Marker>
                                 <Circle
@@ -86,7 +86,7 @@ export const Map2025 = () => {
                                         fillOpacity: 0,
                                     }}
                                 >
-                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                    <Tooltip direction="right" offset={[0, 20]} opacity={1} permanent>
                                         Torre molinos
                                     </Tooltip>
                                 </Circle>
