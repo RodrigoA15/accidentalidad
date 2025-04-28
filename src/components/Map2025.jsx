@@ -68,31 +68,46 @@ export const Map2025 = () => {
                                 <Circle
                                     center={[2.481354279212953, -76.57449602792349]}
                                     radius={200}
-                                    stroke={false}
+                                    pathOptions={{
+                                        color: 'red',
+                                        fillOpacity: 0,
+                                    }}
                                 />
 
                                 <Circle
                                     center={[2.4671311615885037, -76.58644548164973]}
                                     radius={150}
-                                    stroke={false}
+                                    pathOptions={{
+                                        color: 'red',
+                                        fillOpacity: 0,
+                                    }}
                                 />
 
                                 <Circle
                                     center={[2.4517078231692366, -76.60492614837501]}
                                     radius={150}
-                                    stroke={false}
+                                    pathOptions={{
+                                        color: 'red',
+                                        fillOpacity: 0,
+                                    }}
                                 />
 
                                 <Circle
                                     center={[2.4448049143238646, -76.61486831477171]}
                                     radius={150}
-                                    stroke={false}
+                                    pathOptions={{
+                                        color: 'red',
+                                        fillOpacity: 0,
+                                    }}
                                 />
+
                                 <Circle
                                     center={[2.44796556629502, -76.62162695164538]}
                                     radius={150}
-                                    stroke={false}
-
+                                    pathOptions={{
+                                        color: 'red',
+                                        fillOpacity: 0,
+                                    }}
                                 />
                             </>
                         );
