@@ -62,7 +62,10 @@ export const Map2025 = () => {
                             <>
                                 <Marker position={coordinates} icon={item.GRAVEDAD === 'm' ? icon : customIcon}>
                                     <Popup>
-                                        {item.NRO_CROQUIS} - CARGADO: {item.RUNT}
+                                        {item.NRO_CROQUIS} - {item.RUNT === 'S' && <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6 text-blue-500">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                        </svg>
+                                        }
                                     </Popup>
                                 </Marker>
                                 <Circle
@@ -73,7 +76,7 @@ export const Map2025 = () => {
                                         fillOpacity: 0,
                                     }}
                                 >
-                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
+                                    <Tooltip direction="left" offset={[0, 20]} opacity={1} permanent>
                                         Bella vista
                                     </Tooltip>
                                 </Circle>
@@ -86,7 +89,7 @@ export const Map2025 = () => {
                                         fillOpacity: 0,
                                     }}
                                 >
-                                    <Tooltip direction="right" offset={[0, 20]} opacity={1} permanent>
+                                    <Tooltip direction="top" offset={[0, 20]} opacity={1} permanent>
                                         Torre molinos
                                     </Tooltip>
                                 </Circle>
