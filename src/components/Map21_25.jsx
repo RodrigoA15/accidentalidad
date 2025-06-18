@@ -7,7 +7,6 @@ import { accidentes21_25 } from "../data/accidentes2021_2025";
 
 export const Map21_25 = () => {
 
-
     const myCustomColour = '#E83F25'
     const mmySecondCustomColour = '#FFB22C'
 
@@ -69,7 +68,10 @@ export const Map21_25 = () => {
                     return (
                         <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
                             <Popup>
-                                {item.NRO_CROQUIS}
+                                CROQUIS: {item.NRO_CROQUIS} <br />
+                                RUNT: {item.ESTADO_RUNT}<br />
+                                Heridos: {item.HERIDOS}<br />
+                                Muertos: {item.MUERTOS}<br />
                             </Popup>
                         </Marker>
                     );
