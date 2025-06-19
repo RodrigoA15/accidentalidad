@@ -1,10 +1,9 @@
-import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { accidentes21_25 } from "../data/accidentes2021_2025";
-import pinIcons from "../assets/tl.webp"
 import { useState } from "react";
 
 export const Map21_25 = () => {
@@ -55,15 +54,6 @@ export const Map21_25 = () => {
         shadowSize: [41, 41],
     });
 
-    var pinIcon = L.icon({
-        iconUrl: pinIcons,
-        iconSize: [30, 41], // size of the icon
-        iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-        popupAnchor: [1, -34],
-        shadowUrl: markerShadow,
-        shadowSize: [41, 41], // size of the shadow
-    });
-
 
     return (
         <div className="relative h-screen w-full">
@@ -81,7 +71,7 @@ export const Map21_25 = () => {
                 />
 
                 <LayersControl position="topright">
-                    <LayersControl.Overlay name="Muertos">
+                    <LayersControl.Overlay name="Fallecidos">
                         <LayerGroup>
                             {
                                 accidentesFiltrados.filter((item) => item.GRAVEDAD === "m").map((item) => {
@@ -102,7 +92,7 @@ export const Map21_25 = () => {
                                                 CROQUIS: {item.NRO_CROQUIS} <br />
                                                 RUNT: {item.ESTADO_RUNT}<br />
                                                 Heridos: {item.HERIDOS}<br />
-                                                Muertos: {item.MUERTOS}<br />
+                                                Fallecidos: {item.Fallecidos}<br />
                                                 Fecha: {item.FECHA_ACCIDENTE}<br />
                                             </Popup>
                                         </Marker>
@@ -133,7 +123,7 @@ export const Map21_25 = () => {
                                                 CROQUIS: {item.NRO_CROQUIS} <br />
                                                 RUNT: {item.ESTADO_RUNT}<br />
                                                 Heridos: {item.HERIDOS}<br />
-                                                Muertos: {item.MUERTOS}<br />
+                                                Fallecidos: {item.Fallecidos}<br />
                                                 Fecha: {item.FECHA_ACCIDENTE}<br />
                                             </Popup>
                                         </Marker>
@@ -143,7 +133,7 @@ export const Map21_25 = () => {
                         </LayerGroup>
                     </LayersControl.Overlay>
 
-                    <LayersControl.Overlay name="Muertos">
+                    <LayersControl.Overlay name="Fallecidos">
                         <LayerGroup>
                             {
                                 accidentesFiltrados.filter((item) => item.GRAVEDAD === "d").map((item) => {
@@ -164,7 +154,7 @@ export const Map21_25 = () => {
                                                 CROQUIS: {item.NRO_CROQUIS} <br />
                                                 RUNT: {item.ESTADO_RUNT}<br />
                                                 Heridos: {item.HERIDOS}<br />
-                                                Muertos: {item.MUERTOS}<br />
+                                                Fallecidos: {item.Fallecidos}<br />
                                                 Fecha: {item.FECHA_ACCIDENTE}<br />
                                             </Popup>
                                         </Marker>
@@ -174,24 +164,6 @@ export const Map21_25 = () => {
                         </LayerGroup>
                     </LayersControl.Overlay>
                 </LayersControl>
-
-
-                <Marker position={[2.48089865925741, -76.57424860264103]} icon={pinIcon}>
-                    <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
-                        <p className="text-blue-500 font-semibold">Bella vista</p> <br />
-                        Muertos: 6<br />
-                        Heridos: 19 <br />
-                        Daños: 16 <br />
-                    </Tooltip>
-                </Marker>
-                <Marker position={[2.451113496109636, -76.59808807472801]} icon={pinIcon}>
-                    <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
-                        <p className="text-blue-500 font-semibold">Facultad de medicina</p> <br />
-                        Muertos: 1 <br />
-                        Heridos: 6 <br />
-                        Daños: 7 <br />
-                    </Tooltip>
-                </Marker>
             </MapContainer>
 
 
@@ -224,7 +196,7 @@ export const Map21_25 = () => {
                             <th className="px-2 py-1 text-left">A&ntilde;o</th>
                             <th className="px-2 py-1 text-left">Da&ntilde;os</th>
                             <th className="px-2 py-1 text-left">Heridos</th>
-                            <th className="px-2 py-1 text-left">Muertos</th>
+                            <th className="px-2 py-1 text-left">Fallecidos</th>
                             <th className="px-2 py-1 text-left">Total</th>
                         </tr>
                     </thead>
@@ -296,10 +268,26 @@ export const Map21_25 = () => {
                     </div>
 
                     <div className="flex items-center justify-between mt-1">
-                        <p className="text-sm font-semibold">Muertos</p>
+                        <p className="text-sm font-semibold">Fallecidos</p>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6 text-red-500">
                             <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
                         </svg>
+                    </div>
+                </div>
+
+                <div className="flex mt-3">
+                    <div className="border-2 rounded-lg border-blue-300 w-full text-center">
+                        <label className=" font-semibold">Facultad de medicina</label> <br />
+                        Fallecidos: 1 <br />
+                        Heridos: 6 <br />
+                        Daños: 7 <br />
+                    </div>
+
+                    <div className="ml-2 border-2 rounded-lg border-blue-300 w-full text-center">
+                        <label className="font-semibold">Bella vista</label> <br />
+                        Fallecidos: 6<br />
+                        Heridos: 19 <br />
+                        Daños: 16 <br />
                     </div>
                 </div>
 
