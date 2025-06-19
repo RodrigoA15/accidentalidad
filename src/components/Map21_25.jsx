@@ -4,6 +4,7 @@ import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { accidentes21_25 } from "../data/accidentes2021_2025";
+import pinIcons from "../assets/tl.webp"
 
 export const Map21_25 = () => {
 
@@ -42,6 +43,16 @@ export const Map21_25 = () => {
         shadowSize: [41, 41],
     });
 
+    var pinIcon = L.icon({
+        iconUrl: pinIcons,
+        iconSize: [30, 41], // size of the icon
+        iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+        popupAnchor: [1, -34],
+        shadowUrl: markerShadow,
+        shadowSize: [41, 41], // size of the shadow
+    });
+
+
     return (
         <div className="relative h-screen w-full">
             <MapContainer
@@ -76,25 +87,27 @@ export const Map21_25 = () => {
                                     RUNT: {item.ESTADO_RUNT}<br />
                                     Heridos: {item.HERIDOS}<br />
                                     Muertos: {item.MUERTOS}<br />
+                                    Fecha: {item.FECHA_ACCIDENTE}<br />
+
                                 </Popup>
                             </Marker>
                         );
                     })
                 }
 
-                <Marker position={[2.48089865925741, -76.57424860264103]} icon={customIcon}>
+                <Marker position={[2.48089865925741, -76.57424860264103]} icon={pinIcon}>
                     <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
-                        <b>Bella vista</b> <br />
-                        Muertos: 6 <br />
-                        Heridos: 29 <br />
+                        <p className="text-blue-500 font-semibold">Bella vista</p> <br />
+                        Muertos: 6<br />
+                        Heridos: 19 <br />
                         Daños: 16 <br />
                     </Tooltip>
                 </Marker>
-                <Marker position={[2.45119605520421, -76.59661735023083]} icon={customIcon}>
+                <Marker position={[2.451113496109636, -76.59808807472801]} icon={pinIcon}>
                     <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
-                        <b>Facultad de medicina</b> <br />
-                        Muertos: 2 <br />
-                        Heridos: 12 <br />
+                        <p className="text-blue-500 font-semibold">Facultad de medicina</p> <br />
+                        Muertos: 1 <br />
+                        Heridos: 6 <br />
                         Daños: 7 <br />
                     </Tooltip>
                 </Marker>
@@ -116,18 +129,18 @@ export const Map21_25 = () => {
                     <tbody>
                         <tr className="border-b hover:bg-gray-100 text-center">
                             <td className="px-2 py-1">2021</td>
-                            <td className="px-2 py-1">8</td>
+                            <td className="px-2 py-1">6</td>
                             <td className="px-2 py-1">2</td>
                             <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">10</td>
+                            <td className="px-2 py-1">8</td>
 
                         </tr>
                         <tr className="border-b hover:bg-gray- text-center">
                             <td className="px-2 py-1">2022</td>
-                            <td className="px-2 py-1">15</td>
+                            <td className="px-2 py-1">14</td>
                             <td className="px-2 py-1">4</td>
                             <td className="px-2 py-1">1</td>
-                            <td className="px-2 py-1">20</td>
+                            <td className="px-2 py-1">19</td>
 
                         </tr>
                         <tr className="border-b hover:bg-gray-100 text-center">
@@ -160,7 +173,7 @@ export const Map21_25 = () => {
                             <td className="px-2 py-1"></td>
                             <td className="px-2 py-1"></td>
                             <td className="px-2 py-1"></td>
-                            <td className="px-2 py-1">55</td>
+                            <td className="px-2 py-1">52</td>
 
                         </tr>
                     </tbody>
