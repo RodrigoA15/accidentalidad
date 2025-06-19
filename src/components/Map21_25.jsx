@@ -1,4 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -66,18 +66,35 @@ export const Map21_25 = () => {
                         markerIconToUse = customIcon;
                     }
                     return (
-                        <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
-                            <Popup>
-                                CROQUIS: {item.NRO_CROQUIS} <br />
-                                RUNT: {item.ESTADO_RUNT}<br />
-                                Heridos: {item.HERIDOS}<br />
-                                Muertos: {item.MUERTOS}<br />
-                            </Popup>
-                        </Marker>
+                        <>
+                            <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
+                                <Popup>
+                                    CROQUIS: {item.NRO_CROQUIS} <br />
+                                    RUNT: {item.ESTADO_RUNT}<br />
+                                    Heridos: {item.HERIDOS}<br />
+                                    Muertos: {item.MUERTOS}<br />
+                                </Popup>
+                            </Marker>
+                            <Marker position={[2.48089865925741, -76.57424860264103]} icon={customIcon}>
+                                <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
+                                    <b>Bella vista</b> <br />
+                                    Muertos: 6 <br />
+                                    Heridos: 29 <br />
+                                    Daños: 16 <br />
+                                </Tooltip>
+                            </Marker>
+                            <Marker position={[2.45119605520421, -76.59661735023083]} icon={customIcon}>
+                                <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
+                                    <b>Facultad de medicina</b> <br />
+                                    Muertos: 2 <br />
+                                    Heridos: 12 <br />
+                                    Daños: 7 <br />
+                                </Tooltip>
+                            </Marker>
+                        </>
                     );
                 })
             }
-
 
         </MapContainer>
     )
