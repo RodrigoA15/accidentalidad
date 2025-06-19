@@ -5,8 +5,20 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { accidentes21_25 } from "../data/accidentes2021_2025";
 import pinIcons from "../assets/tl.webp"
+import { useState } from "react";
 
 export const Map21_25 = () => {
+
+    const [fechaInicio, setFechaInicio] = useState("");
+    const [fechaFin, setFechaFin] = useState("");
+
+    const accidentesFiltrados = accidentes21_25.filter((item) => {
+        const fecha = new Date(item.FECHA_ACCIDENTE);
+        const inicio = fechaInicio ? new Date(fechaInicio) : null;
+        const fin = fechaFin ? new Date(fechaFin) : null;
+
+        return (!inicio || fecha >= inicio) && (!fin || fecha <= fin);
+    });
 
     const myCustomColour = '#E83F25'
     const mmySecondCustomColour = '#FFB22C'
@@ -68,7 +80,7 @@ export const Map21_25 = () => {
                     accessToken="pk.eyJ1IjoiZGF2aWQwMSIsImEiOiJjazlpa2ZxaWgxOHhpM2huYTFsNnFlcDQ1In0.JZ2u_pssa-EoUySjKOCFMA"
                 />
                 {
-                    accidentes21_25.map((item) => {
+                    accidentesFiltrados.map((item) => {
                         const coordinates = Array.isArray(item.COORDENADAS)
                             ? item.COORDENADAS
                             : item.COORDENADAS.split(',').map(coord => parseFloat(coord.trim()));
@@ -113,9 +125,31 @@ export const Map21_25 = () => {
                 </Marker>
             </MapContainer>
 
+
             {/* Tabla sobrepuesta */}
+            <div className="absolute top-4 left-12 z-10 bg-white/90 rounded-lg p-3 shadow-md flex flex-col gap-2 text-sm">
+                <div>
+                    <label className="font-medium block mb-1">Fecha Inicio</label>
+                    <input
+                        type="date"
+                        value={fechaInicio}
+                        onChange={(e) => setFechaInicio(e.target.value)}
+                        className="border border-gray-300 rounded px-2 py-1 w-56"
+                    />
+                </div>
+                <div>
+                    <label className="font-medium block mb-1">Fecha Fin</label>
+                    <input
+                        type="date"
+                        value={fechaFin}
+                        onChange={(e) => setFechaFin(e.target.value)}
+                        className="border border-gray-300 rounded px-2 py-1 w-56"
+                    />
+                </div>
+            </div>
             <div className="absolute top-4 right-4 bg-white/90 shadow-lg rounded-lg p-4 max-w-md z-10 overflow-auto max-h-90">
                 <h2 className="text-lg font-semibold mb-2">Resumen siniestralidad</h2>
+
                 <table className="table-auto text-sm w-full">
                     <thead>
                         <tr className="">
