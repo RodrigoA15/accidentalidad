@@ -54,7 +54,6 @@ export const Map21_25 = () => {
         shadowSize: [41, 41],
     });
 
-
     return (
         <div className="relative h-screen w-full">
             <MapContainer
@@ -133,7 +132,7 @@ export const Map21_25 = () => {
                         </LayerGroup>
                     </LayersControl.Overlay>
 
-                    <LayersControl.Overlay name="Fallecidos">
+                    <LayersControl.Overlay name="Daños">
                         <LayerGroup>
                             {
                                 accidentesFiltrados.filter((item) => item.GRAVEDAD === "d").map((item) => {
@@ -290,8 +289,6 @@ export const Map21_25 = () => {
                         Daños: 16 <br />
                     </div>
                 </div>
-
-
             </div>
         </div>
     );
