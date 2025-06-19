@@ -1,4 +1,4 @@
-import { MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
+import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -68,7 +68,7 @@ export const Map21_25 = () => {
     return (
         <div className="relative h-screen w-full">
             <MapContainer
-                center={[2.4452803430233065, -76.61558298326308]}
+                center={[2.451924113585419, -76.60984283868237]}
                 zoom={14}
                 scrollWheelZoom={true}
                 className="h-full w-full z-0"
@@ -79,33 +79,102 @@ export const Map21_25 = () => {
                     url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
                     accessToken="pk.eyJ1IjoiZGF2aWQwMSIsImEiOiJjazlpa2ZxaWgxOHhpM2huYTFsNnFlcDQ1In0.JZ2u_pssa-EoUySjKOCFMA"
                 />
-                {
-                    accidentesFiltrados.map((item) => {
-                        const coordinates = Array.isArray(item.COORDENADAS)
-                            ? item.COORDENADAS
-                            : item.COORDENADAS.split(',').map(coord => parseFloat(coord.trim()));
-                        let markerIconToUse;
-                        if (item.GRAVEDAD === 'm') {
-                            markerIconToUse = getCustomIcon(myCustomColour);
-                        } else if (item.GRAVEDAD === 'd') {
-                            markerIconToUse = getCustomIcon(mmySecondCustomColour);
-                        } else {
-                            markerIconToUse = customIcon;
-                        }
-                        return (
-                            <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
-                                <Popup>
-                                    CROQUIS: {item.NRO_CROQUIS} <br />
-                                    RUNT: {item.ESTADO_RUNT}<br />
-                                    Heridos: {item.HERIDOS}<br />
-                                    Muertos: {item.MUERTOS}<br />
-                                    Fecha: {item.FECHA_ACCIDENTE}<br />
 
-                                </Popup>
-                            </Marker>
-                        );
-                    })
-                }
+                <LayersControl position="topright">
+                    <LayersControl.Overlay name="Muertos">
+                        <LayerGroup>
+                            {
+                                accidentesFiltrados.filter((item) => item.GRAVEDAD === "m").map((item) => {
+                                    const coordinates = Array.isArray(item.COORDENADAS)
+                                        ? item.COORDENADAS
+                                        : item.COORDENADAS.split(',').map(coord => parseFloat(coord.trim()));
+                                    let markerIconToUse;
+                                    if (item.GRAVEDAD === 'm') {
+                                        markerIconToUse = getCustomIcon(myCustomColour);
+                                    } else if (item.GRAVEDAD === 'd') {
+                                        markerIconToUse = getCustomIcon(mmySecondCustomColour);
+                                    } else {
+                                        markerIconToUse = customIcon;
+                                    }
+                                    return (
+                                        <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
+                                            <Popup>
+                                                CROQUIS: {item.NRO_CROQUIS} <br />
+                                                RUNT: {item.ESTADO_RUNT}<br />
+                                                Heridos: {item.HERIDOS}<br />
+                                                Muertos: {item.MUERTOS}<br />
+                                                Fecha: {item.FECHA_ACCIDENTE}<br />
+                                            </Popup>
+                                        </Marker>
+                                    );
+                                })
+                            }
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Heridos">
+                        <LayerGroup>
+                            {
+                                accidentesFiltrados.filter((item) => item.GRAVEDAD === "h").map((item) => {
+                                    const coordinates = Array.isArray(item.COORDENADAS)
+                                        ? item.COORDENADAS
+                                        : item.COORDENADAS.split(',').map(coord => parseFloat(coord.trim()));
+                                    let markerIconToUse;
+                                    if (item.GRAVEDAD === 'm') {
+                                        markerIconToUse = getCustomIcon(myCustomColour);
+                                    } else if (item.GRAVEDAD === 'd') {
+                                        markerIconToUse = getCustomIcon(mmySecondCustomColour);
+                                    } else {
+                                        markerIconToUse = customIcon;
+                                    }
+                                    return (
+                                        <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
+                                            <Popup>
+                                                CROQUIS: {item.NRO_CROQUIS} <br />
+                                                RUNT: {item.ESTADO_RUNT}<br />
+                                                Heridos: {item.HERIDOS}<br />
+                                                Muertos: {item.MUERTOS}<br />
+                                                Fecha: {item.FECHA_ACCIDENTE}<br />
+                                            </Popup>
+                                        </Marker>
+                                    );
+                                })
+                            }
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+
+                    <LayersControl.Overlay name="Muertos">
+                        <LayerGroup>
+                            {
+                                accidentesFiltrados.filter((item) => item.GRAVEDAD === "d").map((item) => {
+                                    const coordinates = Array.isArray(item.COORDENADAS)
+                                        ? item.COORDENADAS
+                                        : item.COORDENADAS.split(',').map(coord => parseFloat(coord.trim()));
+                                    let markerIconToUse;
+                                    if (item.GRAVEDAD === 'm') {
+                                        markerIconToUse = getCustomIcon(myCustomColour);
+                                    } else if (item.GRAVEDAD === 'd') {
+                                        markerIconToUse = getCustomIcon(mmySecondCustomColour);
+                                    } else {
+                                        markerIconToUse = customIcon;
+                                    }
+                                    return (
+                                        <Marker position={coordinates} icon={markerIconToUse} key={item.NRO_CROQUIS}>
+                                            <Popup>
+                                                CROQUIS: {item.NRO_CROQUIS} <br />
+                                                RUNT: {item.ESTADO_RUNT}<br />
+                                                Heridos: {item.HERIDOS}<br />
+                                                Muertos: {item.MUERTOS}<br />
+                                                Fecha: {item.FECHA_ACCIDENTE}<br />
+                                            </Popup>
+                                        </Marker>
+                                    );
+                                })
+                            }
+                        </LayerGroup>
+                    </LayersControl.Overlay>
+                </LayersControl>
+
 
                 <Marker position={[2.48089865925741, -76.57424860264103]} icon={pinIcon}>
                     <Tooltip direction="bottom" offset={[0, 20]} opacity={1} permanent>
@@ -147,9 +216,8 @@ export const Map21_25 = () => {
                     />
                 </div>
             </div>
-            <div className="absolute top-4 right-4 bg-white/90 shadow-lg rounded-lg p-4 max-w-md z-10 overflow-auto max-h-90">
+            <div className="absolute top-20 right-4 bg-white/90 shadow-lg rounded-lg p-4 max-w-md z-10 overflow-auto max-h-90">
                 <h2 className="text-lg font-semibold mb-2">Resumen siniestralidad</h2>
-
                 <table className="table-auto text-sm w-full">
                     <thead>
                         <tr className="">
