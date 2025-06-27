@@ -1,4 +1,4 @@
-import { LayerGroup, LayersControl, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { CircleMarker, LayerGroup, LayersControl, MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -68,6 +68,24 @@ export const Map21_25 = () => {
                     url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
                     accessToken="pk.eyJ1IjoiZGF2aWQwMSIsImEiOiJjazlpa2ZxaWgxOHhpM2huYTFsNnFlcDQ1In0.JZ2u_pssa-EoUySjKOCFMA"
                 />
+
+                <Polyline color="#E83F25" positions={[[2.4802038638864357, -76.57525589468791], [2.48135081704308, -76.5745454248095]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+                <Polyline color="#E83F25" positions={[[2.4802038638864357, -76.57525589468791], [2.479050149675652, -76.57594606542847]]} >
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+
+                <CircleMarker
+                    center={[2.480215130609118, -76.57524461738977]}
+                    pathOptions={{ color: 'red' }}
+                    radius={5}>
+                    <Tooltip>Tooltip for CircleMarker</Tooltip>
+                </CircleMarker>
 
                 <LayersControl position="topright">
                     <LayersControl.Overlay name="Fallecidos">
