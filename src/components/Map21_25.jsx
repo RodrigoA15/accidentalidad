@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { CircleMarker, LayerGroup, LayersControl, MapContainer, Marker, Polyline, Popup, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { accidentes21_25 } from "../data/accidentes2021_2025";
-import { useState } from "react";
-
+import { comp_facultad } from "../data/comparendos";
 export const Map21_25 = () => {
 
     const [fechaInicio, setFechaInicio] = useState("");
@@ -86,6 +86,26 @@ export const Map21_25 = () => {
                     radius={5}>
                     <Tooltip>Tooltip for CircleMarker</Tooltip>
                 </CircleMarker>
+
+                {
+                    comp_facultad.map((item) => {
+                        // Replace comma with period and convert to a float
+                        const latitude = parseFloat(item.LATITUD.replace(',', '.'));
+                        const longitude = parseFloat(item.LONGITUD.replace(',', '.'));
+
+                        // Check if the parsed values are valid numbers before rendering the Marker
+                        if (isNaN(latitude) || isNaN(longitude)) {
+                            console.warn('Invalid latitude or longitude for item:', item);
+                            return null; // Skip rendering this marker if coordinates are invalid
+                        }
+
+                        return (
+                            <Marker key={item.NRO_COMPARENDO} position={[latitude, longitude]} icon={getCustomIcon("#819067")}>
+                                <Popup>{item.NRO_COMPARENDO} - {item.COD_INFRACCION}</Popup>
+                            </Marker>
+                        );
+                    })
+                }
 
                 <LayersControl position="topright">
                     <LayersControl.Overlay name="Fallecidos">
