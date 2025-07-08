@@ -87,6 +87,7 @@ export const Map21_25 = () => {
                     <Tooltip>Tooltip for CircleMarker</Tooltip>
                 </CircleMarker>
 
+                {/* COMPARENDOS */}
                 {
                     comp_facultad.map((item) => {
                         // Replace comma with period and convert to a float
@@ -325,6 +326,14 @@ export const Map21_25 = () => {
                         Fallecidos: 6<br />
                         Heridos: 19 <br />
                         Daños: 16 <br />
+                    </div>
+                </div>
+                <div className="flex mt-3  justify-items-start">
+                    <div className="ml-2 border-2 rounded-lg border-blue-300 w-full text-center">
+                        <label className="font-semibold">Cai - Cementerio</label> <br />
+                        Fallecidos: 2<br />
+                        Heridos: 14 <br />
+                        Daños: 7 <br />
                     </div>
                 </div>
             </div>
