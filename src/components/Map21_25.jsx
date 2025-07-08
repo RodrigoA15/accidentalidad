@@ -248,42 +248,42 @@ export const Map21_25 = () => {
                     <tbody>
                         <tr className="border-b hover:bg-gray-100 text-center">
                             <td className="px-2 py-1">2021</td>
-                            <td className="px-2 py-1">6</td>
+                            <td className="px-2 py-1">8</td>
                             <td className="px-2 py-1">2</td>
                             <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">8</td>
+                            <td className="px-2 py-1">10</td>
 
                         </tr>
                         <tr className="border-b hover:bg-gray- text-center">
                             <td className="px-2 py-1">2022</td>
-                            <td className="px-2 py-1">14</td>
-                            <td className="px-2 py-1">4</td>
-                            <td className="px-2 py-1">1</td>
                             <td className="px-2 py-1">19</td>
+                            <td className="px-2 py-1">7</td>
+                            <td className="px-2 py-1">2</td>
+                            <td className="px-2 py-1">28</td>
 
                         </tr>
                         <tr className="border-b hover:bg-gray-100 text-center">
                             <td className="px-2 py-1">2023</td>
                             <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">13</td>
-                            <td className="px-2 py-1">1</td>
-                            <td className="px-2 py-1">14</td>
+                            <td className="px-2 py-1">17</td>
+                            <td className="px-2 py-1">2</td>
+                            <td className="px-2 py-1">19</td>
 
                         </tr>
                         <tr className="border-b hover:bg-gray-100 text-center">
                             <td className="px-2 py-1">2024</td>
                             <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">4</td>
+                            <td className="px-2 py-1">8</td>
                             <td className="px-2 py-1">5</td>
-                            <td className="px-2 py-1">9</td>
+                            <td className="px-2 py-1">13</td>
 
                         </tr>
                         <tr className="border-b hover:bg-gray-100 text-center">
                             <td className="px-2 py-1">2025</td>
                             <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">2</td>
+                            <td className="px-2 py-1">5</td>
                             <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">2</td>
+                            <td className="px-2 py-1">5</td>
 
                         </tr>
 
@@ -292,7 +292,7 @@ export const Map21_25 = () => {
                             <td className="px-2 py-1"></td>
                             <td className="px-2 py-1"></td>
                             <td className="px-2 py-1"></td>
-                            <td className="px-2 py-1">52</td>
+                            <td className="px-2 py-1">75</td>
 
                         </tr>
                     </tbody>
