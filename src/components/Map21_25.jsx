@@ -88,7 +88,7 @@ export const Map21_25 = () => {
                 </CircleMarker>
 
                 <CircleMarker
-                    center={[2.4472289715431295, -76.62080901614617]}
+                    center={[2.4472567103593086, -76.62091970862645]}
                     pathOptions={{ color: 'red' }}
                     radius={10}>
                     <Tooltip direction="bottom" permanent>Cai - Cementerio</Tooltip>
