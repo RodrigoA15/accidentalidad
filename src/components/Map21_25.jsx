@@ -100,6 +100,16 @@ export const Map21_25 = () => {
                     radius={10}>
                     <Tooltip direction="bottom" permanent>Facultad de medicina</Tooltip>
                 </CircleMarker>
+                <Polyline color="#E83F25" positions={[[2.4472567103593086, -76.62091970862645], [2.4467864741437477, -76.61963343335171]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+                <Polyline color="#E83F25" positions={[[2.4472567103593086, -76.62091970862645], [2.44796451714892, -76.62207951862784]]} >
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
 
                 {/* COMPARENDOS */}
                 {
