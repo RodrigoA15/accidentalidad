@@ -263,14 +263,6 @@ export const Map21_25 = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="border-b hover:bg-gray-100 text-center">
-                            <td className="px-2 py-1">2021</td>
-                            <td className="px-2 py-1">8</td>
-                            <td className="px-2 py-1">2</td>
-                            <td className="px-2 py-1">0</td>
-                            <td className="px-2 py-1">10</td>
-
-                        </tr>
                         <tr className="border-b hover:bg-gray- text-center">
                             <td className="px-2 py-1">2022</td>
                             <td className="px-2 py-1">19</td>
@@ -301,7 +293,6 @@ export const Map21_25 = () => {
                             <td className="px-2 py-1">5</td>
                             <td className="px-2 py-1">0</td>
                             <td className="px-2 py-1">5</td>
-
                         </tr>
 
                         <tr className="border-b hover:bg-gray-100 text-center">
@@ -309,8 +300,7 @@ export const Map21_25 = () => {
                             <td className="px-2 py-1"></td>
                             <td className="px-2 py-1"></td>
                             <td className="px-2 py-1"></td>
-                            <td className="px-2 py-1">75</td>
-
+                            <td className="px-2 py-1">65</td>
                         </tr>
                     </tbody>
                 </table>
