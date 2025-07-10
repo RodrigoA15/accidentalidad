@@ -94,6 +94,13 @@ export const Map21_25 = () => {
                     <Tooltip direction="bottom" permanent>Cai - Cementerio</Tooltip>
                 </CircleMarker>
 
+                <CircleMarker
+                    center={[2.451025495657611, -76.59916075100172]}
+                    pathOptions={{ color: 'red' }}
+                    radius={10}>
+                    <Tooltip direction="bottom" permanent>Facultad de medicina</Tooltip>
+                </CircleMarker>
+
                 {/* COMPARENDOS */}
                 {
                     comp_facultad.map((item) => {
