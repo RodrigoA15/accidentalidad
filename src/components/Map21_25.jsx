@@ -5,7 +5,8 @@ import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { accidentes21_25 } from "../data/accidentes2021_2025";
-import { comp_facultad } from "../data/comparendos";
+import comp_facultad from "../data/coordenadas/facultad.json"
+
 export const Map21_25 = () => {
 
     const [fechaInicio, setFechaInicio] = useState("");
@@ -80,11 +81,29 @@ export const Map21_25 = () => {
                     </Tooltip>
                 </Polyline>
 
+                <Polyline positions={[[2.451339972544173, -76.59927765043416], [2.4519190951766285, -76.59809127851018]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+                <Polyline positions={[[2.451339972544173, -76.59927765043416], [2.4507923972176826, -76.60052266431629]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+
+
+
                 <CircleMarker
                     center={[2.480215130609118, -76.57524461738977]}
                     pathOptions={{ color: 'red' }}
                     radius={5}>
-                    <Tooltip>Tooltip for CircleMarker</Tooltip>
+                </CircleMarker>
+
+                <CircleMarker
+                    center={[2.480215130609118, -76.57524461738977]}
+                    pathOptions={{ color: 'red' }}
+                    radius={255}>
                 </CircleMarker>
 
                 <CircleMarker
@@ -95,9 +114,15 @@ export const Map21_25 = () => {
                 </CircleMarker>
 
                 <CircleMarker
-                    center={[2.451025495657611, -76.59916075100172]}
+                    center={[2.451339972544173, -76.59927765043416]}
                     pathOptions={{ color: 'red' }}
-                    radius={10}>
+                    radius={255}>
+                    <Tooltip direction="bottom" permanent>Facultad de medicina</Tooltip>
+                </CircleMarker>
+                <CircleMarker
+                    center={[2.451339972544173, -76.59927765043416]}
+                    pathOptions={{ color: 'red' }}
+                    radius={8}>
                     <Tooltip direction="bottom" permanent>Facultad de medicina</Tooltip>
                 </CircleMarker>
                 <Polyline color="#E83F25" positions={[[2.4472567103593086, -76.62091970862645], [2.4467864741437477, -76.61963343335171]]}>
@@ -115,8 +140,8 @@ export const Map21_25 = () => {
                 {
                     comp_facultad.map((item) => {
                         // Replace comma with period and convert to a float
-                        const latitude = parseFloat(item.LATITUD.replace(',', '.'));
-                        const longitude = parseFloat(item.LONGITUD.replace(',', '.'));
+                        const latitude = parseFloat(item.LATITUD2.replace(',', '.'));
+                        const longitude = parseFloat(item.LONGITUD2.replace(',', '.'));
 
                         // Check if the parsed values are valid numbers before rendering the Marker
                         if (isNaN(latitude) || isNaN(longitude)) {
@@ -126,7 +151,7 @@ export const Map21_25 = () => {
 
                         return (
                             <Marker key={item.NRO_COMPARENDO} position={[latitude, longitude]} icon={getCustomIcon("#819067")}>
-                                <Popup>{item.NRO_COMPARENDO} - {item.COD_INFRACCION}</Popup>
+                                <Popup>{item.NRO_COMPARENDO}</Popup>
                             </Marker>
                         );
                     })
@@ -155,7 +180,8 @@ export const Map21_25 = () => {
                                                 RUNT: {item.ESTADO_RUNT}<br />
                                                 Heridos: {item.HERIDOS}<br />
                                                 Fallecidos: {item.Fallecidos}<br />
-                                                Fecha: {item.FECHA_ACCIDENTE}<br />
+                                                Fechssa: {item.FECHA_ACCIDENTE}<br />
+                                                Direccion: {item.DIRECCION_LUGAR}<br />
                                             </Popup>
                                         </Marker>
                                     );
@@ -187,6 +213,8 @@ export const Map21_25 = () => {
                                                 Heridos: {item.HERIDOS}<br />
                                                 Fallecidos: {item.Fallecidos}<br />
                                                 Fecha: {item.FECHA_ACCIDENTE}<br />
+                                                Direccion: {item.DIRECCION_LUGAR}<br />
+
                                             </Popup>
                                         </Marker>
                                     );
@@ -218,6 +246,8 @@ export const Map21_25 = () => {
                                                 Heridos: {item.HERIDOS}<br />
                                                 Fallecidos: {item.Fallecidos}<br />
                                                 Fecha: {item.FECHA_ACCIDENTE}<br />
+                                                Direccion: {item.DIRECCION_LUGAR}<br />
+
                                             </Popup>
                                         </Marker>
                                     );
@@ -337,9 +367,9 @@ export const Map21_25 = () => {
 
                     <div className="ml-2 border-2 rounded-lg border-blue-300 w-full text-center">
                         <label className="font-semibold">Bella vista</label> <br />
-                        Fallecidos: 6<br />
-                        Heridos: 19 <br />
-                        Daños: 16 <br />
+                        Fallecidos: 3<br />
+                        Heridos: 11 <br />
+                        Daños: 0 <br />
                     </div>
                 </div>
                 <div className="flex mt-3  justify-items-start">
