@@ -4,8 +4,9 @@ import "leaflet/dist/leaflet.css";
 import * as L from "leaflet"
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
-import { accidentes21_25 } from "../data/accidentes2021_2025";
-import comp_facultad from "../data/coordenadas/facultad.json"
+// import { accidentes21_25 } from "../data/accidentes2021_2025";
+import accidentes21_25 from "../data/coordenadas/accidentes_bv.json"
+// import comp_facultad from "../data/coordenadas/facultad.json"
 import comp_cementerio from "../data/coordenadas/cai_cementerio.json"
 
 export const Map21_25 = () => {
@@ -71,23 +72,12 @@ export const Map21_25 = () => {
                     accessToken="pk.eyJ1IjoiZGF2aWQwMSIsImEiOiJjazlpa2ZxaWgxOHhpM2huYTFsNnFlcDQ1In0.JZ2u_pssa-EoUySjKOCFMA"
                 />
 
-                <Polyline color="#E83F25" positions={[[2.4802038638864357, -76.57525589468791], [2.48135081704308, -76.5745454248095]]}>
+                <Polyline color="#E83F25" positions={[[2.4802812195972406, -76.5750949455383], [2.48135081704308, -76.5745454248095]]}>
                     <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
                         150 MTS
                     </Tooltip>
                 </Polyline>
-                <Polyline color="#E83F25" positions={[[2.4802038638864357, -76.57525589468791], [2.479050149675652, -76.57594606542847]]} >
-                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
-                        150 MTS
-                    </Tooltip>
-                </Polyline>
-
-                <Polyline positions={[[2.451339972544173, -76.59927765043416], [2.4519190951766285, -76.59809127851018]]}>
-                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
-                        150 MTS
-                    </Tooltip>
-                </Polyline>
-                <Polyline positions={[[2.451339972544173, -76.59927765043416], [2.4507923972176826, -76.60052266431629]]}>
+                <Polyline color="#E83F25" positions={[[2.4802812195972406, -76.5750949455383], [2.4791164751919954, -76.57579030057987]]} >
                     <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
                         150 MTS
                     </Tooltip>
@@ -96,13 +86,13 @@ export const Map21_25 = () => {
 
 
                 <CircleMarker
-                    center={[2.480215130609118, -76.57524461738977]}
+                    center={[2.4802812195972406, -76.5750949455383]}
                     pathOptions={{ color: 'red' }}
                     radius={5}>
                 </CircleMarker>
 
                 <CircleMarker
-                    center={[2.480215130609118, -76.57524461738977]}
+                    center={[2.4802812195972406, -76.5750949455383]}
                     pathOptions={{ color: 'red' }}
                     radius={255}>
                 </CircleMarker>
@@ -113,7 +103,7 @@ export const Map21_25 = () => {
                     radius={10}>
                     <Tooltip direction="bottom" permanent>Cai - Cementerio</Tooltip>
                 </CircleMarker>
-                  <CircleMarker
+                <CircleMarker
                     center={[2.4472567103593086, -76.62091970862645]}
                     pathOptions={{ color: 'red' }}
                     radius={255}>
@@ -168,7 +158,7 @@ export const Map21_25 = () => {
 
 
                 {/* FACULTAD_MEDICINA */}
-                {
+                {/* {
                     comp_facultad.map((item) => {
                         // Replace comma with period and convert to a float
                         const latitude = parseFloat(item.LATITUD2.replace(',', '.'));
@@ -186,7 +176,7 @@ export const Map21_25 = () => {
                             </Marker>
                         );
                     })
-                }
+                } */}
 
                 <LayersControl position="topright">
                     <LayersControl.Overlay name="Fallecidos">
