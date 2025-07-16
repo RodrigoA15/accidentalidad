@@ -6,6 +6,7 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import { accidentes21_25 } from "../data/accidentes2021_2025";
 import comp_facultad from "../data/coordenadas/facultad.json"
+import comp_cementerio from "../data/coordenadas/cai_cementerio.json"
 
 export const Map21_25 = () => {
 
@@ -112,6 +113,12 @@ export const Map21_25 = () => {
                     radius={10}>
                     <Tooltip direction="bottom" permanent>Cai - Cementerio</Tooltip>
                 </CircleMarker>
+                  <CircleMarker
+                    center={[2.4472567103593086, -76.62091970862645]}
+                    pathOptions={{ color: 'red' }}
+                    radius={255}>
+                    <Tooltip direction="bottom" permanent>Cai - Cementerio</Tooltip>
+                </CircleMarker>
 
                 <CircleMarker
                     center={[2.451339972544173, -76.59927765043416]}
@@ -137,6 +144,30 @@ export const Map21_25 = () => {
                 </Polyline>
 
                 {/* COMPARENDOS */}
+                {/* CAI-CEMENTERIO */}
+                {
+                    comp_cementerio.map((item) => {
+                        // Replace comma with period and convert to a float
+                        const latitude = parseFloat(item.LATITUD.replace(',', '.'));
+                        const longitude = parseFloat(item.LONGITUD.replace(',', '.'));
+
+                        // Check if the parsed values are valid numbers before rendering the Marker
+                        if (isNaN(latitude) || isNaN(longitude)) {
+                            console.warn('Invalid latitude or longitude for item:', item);
+                            return null; // Skip rendering this marker if coordinates are invalid
+                        }
+
+                        return (
+                            <Marker key={item.NRO_COMPARENDO} position={[latitude, longitude]} icon={getCustomIcon("#819067")}>
+                                <Popup>{item.NRO_COMPARENDO}</Popup>
+                            </Marker>
+                        );
+                    })
+                }
+
+
+
+                {/* FACULTAD_MEDICINA */}
                 {
                     comp_facultad.map((item) => {
                         // Replace comma with period and convert to a float
