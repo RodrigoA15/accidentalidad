@@ -110,18 +110,41 @@ export const Map21_25 = () => {
                     <Tooltip direction="bottom" permanent>Cai - Cementerio</Tooltip>
                 </CircleMarker>
 
+                {/* CIRCULO PEQUEÑO */}
                 <CircleMarker
-                    center={[2.451339972544173, -76.59927765043416]}
+                    center={[2.451523176521171, -76.59903263251658]}
                     pathOptions={{ color: 'red' }}
                     radius={255}>
                     <Tooltip direction="bottom" permanent>Facultad de medicina</Tooltip>
                 </CircleMarker>
                 <CircleMarker
-                    center={[2.451339972544173, -76.59927765043416]}
+                    center={[2.451523176521171, -76.59903263251658]}
                     pathOptions={{ color: 'red' }}
                     radius={8}>
                     <Tooltip direction="bottom" permanent>Facultad de medicina</Tooltip>
                 </CircleMarker>
+
+                {/* POLYLINES FACULDAT DE MEDICINA */}
+                <Polyline color="#E83F25" positions={[[2.451523176521171, -76.59903263251658], [2.45207982600448, -76.59779263187158]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+
+                <Polyline color="#E83F25" positions={[[2.451523176521171, -76.59903263251658], [2.4508756345836846, -76.60022029034293]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+
+                <Polyline color="#E83F25" positions={[[2.451523176521171, -76.59903263251658], [2.4502502782601736, -76.5985673895332]]}>
+                    <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
+                        150 MTS
+                    </Tooltip>
+                </Polyline>
+
+
+                {/* CAI-CEMENTERIO */}
                 <Polyline color="#E83F25" positions={[[2.4472567103593086, -76.62091970862645], [2.4467864741437477, -76.61963343335171]]}>
                     <Tooltip direction="bottom" offset={[0, 0]} opacity={1} permanent>
                         150 MTS
@@ -201,8 +224,10 @@ export const Map21_25 = () => {
                                                 RUNT: {item.ESTADO_RUNT}<br />
                                                 Heridos: {item.HERIDOS}<br />
                                                 Fallecidos: {item.Fallecidos}<br />
-                                                Fechssa: {item.FECHA_ACCIDENTE}<br />
+                                                Fecha: {item.FECHA_ACCIDENTE}<br />
                                                 Direccion: {item.DIRECCION_LUGAR}<br />
+                                                Coordenadas: {item.COORDENADAS}<br />
+
                                             </Popup>
                                         </Marker>
                                     );
@@ -235,6 +260,7 @@ export const Map21_25 = () => {
                                                 Fallecidos: {item.Fallecidos}<br />
                                                 Fecha: {item.FECHA_ACCIDENTE}<br />
                                                 Direccion: {item.DIRECCION_LUGAR}<br />
+                                                Coordenadas: {item.COORDENADAS}<br />
 
                                             </Popup>
                                         </Marker>
