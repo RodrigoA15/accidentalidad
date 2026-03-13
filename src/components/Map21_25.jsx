@@ -69,7 +69,6 @@ export const Map21_25 = () => {
                     id="mapbox/streets-v11"
                     attribution='Created by: Rodrigo Papamija Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>'
                     url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}"
-                    accessToken="pk.eyJ1IjoiZGF2aWQwMSIsImEiOiJjazlpa2ZxaWgxOHhpM2huYTFsNnFlcDQ1In0.JZ2u_pssa-EoUySjKOCFMA"
                 />
 
                 <Polyline color="#E83F25" positions={[[2.4802812195972406, -76.5750949455383], [2.48135081704308, -76.5745454248095]]}>
