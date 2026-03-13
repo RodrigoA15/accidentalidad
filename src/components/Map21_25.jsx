@@ -7,7 +7,7 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 // import { accidentes21_25 } from "../data/accidentes2021_2025";
 import accidentes21_25 from "../data/coordenadas/accidentes_bv.json"
 // import comp_facultad from "../data/coordenadas/facultad.json"
-import comp_cementerio from "../data/coordenadas/cai_cementerio.json"
+// import comp_cementerio from "../data/coordenadas/cai_cementerio.json"
 
 export const Map21_25 = () => {
 
@@ -158,7 +158,7 @@ export const Map21_25 = () => {
 
                 {/* COMPARENDOS */}
                 {/* CAI-CEMENTERIO */}
-                {
+                {/* {
                     comp_cementerio.map((item) => {
                         // Replace comma with period and convert to a float
                         const latitude = parseFloat(item.LATITUD.replace(',', '.'));
@@ -176,7 +176,7 @@ export const Map21_25 = () => {
                             </Marker>
                         );
                     })
-                }
+                } */}
 
 
 
